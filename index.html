@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Citas - DavanteDent</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/app.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="logo-icon">🦷</span> 
+                <h1>DavanteDent</h1>
+            </div>
+            <p class="user-info">Panel de Recepción</p>
+        </div>
+    </header>
+
+    <nav class="app-nav">
+        <button id="nav-crear" class="nav-btn active">➕ Nueva Cita</button>
+        <button id="nav-listar" class="nav-btn">📋 Ver Agenda</button>
+    </nav>
+
+    <main class="main-content">
+        
+        <section id="vista-formulario" class="view-section active-view">
+            <div class="section-form">
+                <h2 id="formTitle">📅 Nueva Cita</h2>
+                <form id="formCitas" class="clinic-form" novalidate>
+                    <input type="hidden" id="idCita">
+
+                    <div class="form-grid">
+                        <fieldset>
+                            <legend>Datos de la Cita</legend>
+                            <div class="form-group">
+                                <label for="fecha">Fecha:</label>
+                                <input type="date" id="fecha" name="fecha" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hora">Hora:</label>
+                                <input type="time" id="hora" name="hora" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Datos del Paciente</legend>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="dni">DNI:</label>
+                                    <input type="text" id="dni" name="dni" placeholder="12345678A" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fechaNacimiento">Fecha Nacimiento:</label>
+                                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellidos">Apellidos:</label>
+                                    <input type="text" id="apellidos" name="apellidos" placeholder="Ej: Pérez García" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono">Teléfono:</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="600112233" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="full-width">
+                            <legend>Notas Adicionales</legend>
+                            <div class="form-group">
+                                <label for="observaciones">Observaciones:</label>
+                                <textarea id="observaciones" name="observaciones" rows="3"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar Cita</button>
+                        <button type="reset" class="btn btn-secondary" id="btnLimpiar">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="vista-tabla" class="view-section hidden">
+            <div class="section-table">
+                <h2>📋 Agenda del Día</h2>
+                <div class="table-responsive">
+                    <table id="tablaCitas" class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Orden</th>
+                                <th>Fecha/Hora</th>
+                                <th>Paciente</th>
+                                <th>Teléfono</th>
+                                <th>Observaciones</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaCitasBody">
+                            <tr id="mensajeVacio">
+                                <td colspan="6" class="text-center">Dato vacío</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 DavanteDent - Gestión Interna</p>
+        </div>
+    </footer>
+
+</body>
+</html>
