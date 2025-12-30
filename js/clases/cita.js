@@ -25,7 +25,7 @@ export class Cita { // Exportamos la clase para poder usarla en otros módulos
         this.observaciones = datos.observaciones || ""; // Opcional
     }
 
-    // Método opcional para obtener la fecha formateada (útil para la tabla luego)
+    // Métodopara obtener la fecha formateada 
     getFechaFormateada() {
         return `${this.fecha} a las ${this.hora}`;
     }
